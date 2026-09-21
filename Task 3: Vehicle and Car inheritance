@@ -1,0 +1,9 @@
+class vehicle:
+  def start(self):
+    print("Vehicle is starting")
+class Car(vehicle):
+  def start(self):
+    super().start()
+    print("Car is starting with a key")
+c = Car()
+c.start()
