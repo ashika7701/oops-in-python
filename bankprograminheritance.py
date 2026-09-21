@@ -8,6 +8,11 @@ class BankAccount:
   def withdraw(self,amount):
     
       self.balance-=amount
+      print("new balance:",self.balance)
+  def deposit(self,amount):
+    self.balance+=amount
+    print("Deposited:", amount)
+    print("New Balance:", self.balance)
       
     
 class SavingsAccount(BankAccount):
@@ -22,7 +27,8 @@ class CurrentAccount(BankAccount):
    super().__init__(account_holder,balance)
   
   def withdraw(self,amount):
-    if self.balance>amount:
+    if amount<=self.balance:
+      self.balance-=amount
       print("sucessfully withdraw")
     else:
         print("insufficient amount")
@@ -31,6 +37,7 @@ s = SavingsAccount("Arun", 10000, 5)
 s.display_details()
 s.calculate_interest()
 s.withdraw(2000)
+s.deposit(3000)
 
 print("Balance after withdrawal:", s.balance)
 
