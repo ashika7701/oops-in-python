@@ -1,0 +1,13 @@
+class Shape:
+  def display_shape(self):
+    print("this is shape")
+class Rectangle(Shape):
+  def __init__(self,width,length):
+    self.width=width
+    self.length=length
+  def calculate_area(self):
+    print("area",self.width*self.length)
+r = Rectangle(10, 5)
+
+r.display_shape()
+r.calculate_area()
